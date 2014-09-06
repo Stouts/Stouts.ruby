@@ -1,0 +1,35 @@
+---
+
+- include: install.deb.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Download ruby
+  get_url: url={{ruby_current['download_location']}} dest=/usr/local/src/ruby-{{ruby_current['version']}}.tar.gz
+
+- name: Extract ruby
+  unarchive: src=/usr/local/src/ruby-{{ruby_current['version']}}.tar.gz dest=/usr/local/src copy=no
+
+- name: Build ruby.
+  command: >
+    {{ item }}
+    chdir=/usr/local/src/ruby-{{ruby_current['version']}}
+    creates=/usr/local/bin/ruby
+  with_items:
+    - ./configure
+    - make
+    - make install
+
+- name: Add ruby symlinks.
+  file: src=/usr/local/bin/{{ item }} dest=/usr/bin/{{ item }} state=link
+  with_items:
+    - erb
+    - gem
+    - irb
+    - rake
+    - rdoc
+    - ruby
+    - testrb
+
+- name: Install gems
+  gem: name={{item}} user_install=no
+  with_items: ruby_gems

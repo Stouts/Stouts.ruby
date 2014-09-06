@@ -1,0 +1,25 @@
+---
+
+ruby_enabled: yes                   # The role is enabled
+ruby_version: 1.9.3                 # Set ruby version (1.9.3, 2.0.0, 2.1.2)
+ruby_gems: []                       # List of gems which will be installed
+ruby_apt_dependencies:
+- autoconf
+- build-essential
+- libreadline-dev
+- libssl-dev
+- libyaml-dev
+- zlib1g-dev
+
+ruby_versions:
+  1.9.3:
+    version: 1.9.3-p545
+    download_location: http://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p545.tar.gz
+  2.0.0:
+    version: 2.0.0-p481
+    download_location: http://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p481.tar.gz
+  2.1.2:
+    version: 2.1.2
+    download_location: http://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.1.2.tar.gz
+
+ruby_current: "{{ ruby_versions[ruby_version] }}"
