@@ -1,7 +1,9 @@
 Stouts.ruby
 =============
 
-[![Build Status](https://travis-ci.org/Stouts/Stouts.ruby.png)](https://travis-ci.org/Stouts/Stouts.ruby)
+[![Build Status](http://img.shields.io/travis/Stouts/Stouts.ruby.svg?style=flat-square)](https://travis-ci.org/Stouts/Stouts.ruby)
+[![Galaxy](http://img.shields.io/badge/galaxy-Stouts.ruby-blue.svg?style=flat-square)](https://galaxy.ruby.com/list#/roles/1629)
+[![Tag](http://img.shields.io/github/tag/Stouts/Stouts.ruby.svg?style=flat-square)]()
 
 Ansible role which manage ruby (install, setup, gems)
 
