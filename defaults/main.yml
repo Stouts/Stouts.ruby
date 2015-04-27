@@ -20,6 +20,9 @@ ruby_versions:
     download_location: http://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p481.tar.gz
   2.1.2:
     version: 2.1.2
-    download_location: http://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.1.2.tar.gz
+    download_location: http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz
+  2.2.2:
+    version: 2.2.2
+    download_location: http://cache.ruby-lang.org/pub/ruby/2.2/ruby-2.2.2.tar.gz
 
 ruby_current: "{{ ruby_versions[ruby_version] }}"
